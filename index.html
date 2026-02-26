@@ -122,7 +122,30 @@ body {
 /* =====================================================
    6. CONTENIDO PRINCIPAL
 ===================================================== */
-.main { max-width: 900px; margin: 40px auto; padding: 0 20px 40px 20px; }
+.main-grid {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    background: #000;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
 
 /* =====================================================
    7. TARJETA PREMIUM
@@ -242,29 +265,8 @@ body {
     <h1>Sistema Premium+</h1>
 </header>
 
-<!-- BOTÓN MENU -->
-<button class="menu-toggle">MENU</button>
-
-<!-- SIDEBAR -->
-<div class="sidebar" id="sidebar">
-    <button class="sidebar-close">MENU</button>
-    <h2>Mis Clases</h2>
-    <ul>
-<li><a href="#" data-video="https://www.youtube.com/embed/qF_KQliAjx0?autoplay=1&mute=1&controls=0&loop=1&playlist=qF_KQliAjx0" data-link="https://revistacps.github.io/KungFuPanda-2/">Clase 1 - KungFuPanda-2</a></li>
-        <li><a href="#" data-video="https://www.youtube.com/embed/Sd9T-4AqOO0?autoplay=1&mute=1&controls=0&loop=1&playlist=Sd9T-4AqOO0" data-link="https://revistacps.github.io/Sr.Pibody1/">Clase 2 - Sr.Pibody1</a></li>
-        <li><a href="#" data-video="https://www.youtube.com/embed/_z0CTz_rZTU?autoplay=1&mute=1&controls=0&loop=1&playlist=_z0CTz_rZTU" data-link="https://revistacps.github.io/Anacoronacion1/">Clase 3 - Anacoronacion1</a></li>
-        <li><a href="#" data-video="https://www.youtube.com/embed/kLnYyM0t1kE?autoplay=1&mute=1&controls=0&loop=1&playlist=kLnYyM0t1kE" data-link="https://revistacps.github.io/Friend1/">Clase 4 - Friends1</a></li>
-        <li><a href="#" data-video="https://www.youtube.com/embed/fDjx423V-cQ?autoplay=1&mute=1&controls=0&loop=1&playlist=fDjx423V-cQ"data-link="https://revistacps.github.io/Lilo1/">Clase 5 - Lilo1</a></li>
-        <li><a href="#" data-video="https://www.youtube.com/embed/YYYYYYYY?autoplay=1&mute=1&controls=0&loop=1&playlist=YYYYYYY" data-link="#">Clase 6 - Próximamente más videos</a></li>
-    
-    </ul>
-</div>
-
-<!-- OVERLAY -->
-<div class="overlay" id="overlay"></div>
-
 <!-- MAIN -->
-<section class="premium-class">
+<div class="main-grid">
     <div class="video-container">
         <iframe src="https://www.youtube.com/embed/qF_KQliAjx0" allowfullscreen></iframe>
     </div>
@@ -326,6 +328,7 @@ body {
    🔒 Ver clase completa
 </a>
     </div>
+    </div>
 </section>
 
     <!-- BANNER PERSUASIVO -->
@@ -335,26 +338,6 @@ body {
 </main>
 
 <script>
-/* =====================================================
-   SIDEBAR & CAMBIO DINÁMICO DE VIDEO
-===================================================== */
-const sidebar = document.getElementById("sidebar");
-const overlay = document.getElementById("overlay");
-const menuToggle = document.querySelector(".menu-toggle");
-const sidebarClose = document.querySelector(".sidebar-close");
-
-menuToggle.addEventListener("click", () => {
-    sidebar.classList.add("active");
-    overlay.classList.add("active");
-});
-sidebarClose.addEventListener("click", () => {
-    sidebar.classList.remove("active");
-    overlay.classList.remove("active");
-});
-overlay.addEventListener("click", () => {
-    sidebar.classList.remove("active");
-    overlay.classList.remove("active");
-});
 
 const classLinks = document.querySelectorAll(".sidebar a");
 const mainIframe = document.querySelector(".premium-class .video-container iframe");
