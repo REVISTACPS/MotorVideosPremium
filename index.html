@@ -10,31 +10,51 @@
 
 body {
     font-family: "Segoe UI", sans-serif;
-    background: linear-gradient(180deg, #0f172a, #0b1120);
+    background: radial-gradient(circle at 20% 30%, #7c3aed33, transparent 40%),
+                radial-gradient(circle at 80% 70%, #22d3ee22, transparent 40%),
+                linear-gradient(180deg, #0f172a, #0b1120);
     color: #e2e8f0;
     line-height: 1.6;
 }
 
 /* HEADER */
 .header {
-    background: linear-gradient(135deg, #7c3aed, #4c1d95);
-    padding: 60px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #b45309, #ea580c);
+    padding: 28px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+}
+
+.header-content {
     text-align: center;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
 }
 
 .header h1 {
-    font-size: 26px;
-    font-weight: 600;
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: rgba(255,255,255,0.9);
+    margin-top: 6px;
     letter-spacing: 1px;
 }
 
 /* GRID */
 .main-grid {
     max-width: 1100px;
-    margin: 60px auto;
+    margin: 150px auto 60px auto;
     padding: 20px;
     display: grid;
     gap: 50px;
@@ -42,13 +62,18 @@ body {
 
 /* TARJETAS */
 .premium-class {
-    background: rgba(30, 41, 59, 0.7);
-    backdrop-filter: blur(12px);
-    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: 25px;
     overflow: hidden;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.1);
     transition: 0.4s ease;
-    border: 1px solid rgba(255,255,255,0.05);
+    position: relative;
+}
+
+.premium-class:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 40px rgba(124, 58, 237, 0.4);
 }
 
 .premium-class:hover {
@@ -95,17 +120,18 @@ body {
     display: inline-block;
     padding: 14px 40px;
     border-radius: 50px;
-    background: linear-gradient(135deg, #22d3ee, #3b82f6);
+    background: linear-gradient(90deg, #22d3ee, #7c3aed);
     color: white;
     text-decoration: none;
     font-weight: 600;
+    letter-spacing: 0.5px;
     transition: 0.3s ease;
-    box-shadow: 0 10px 25px rgba(59,130,246,0.4);
+    box-shadow: 0 0 20px rgba(124,58,237,0.5);
 }
 
 .premium-button:hover {
     transform: translateY(-4px);
-    box-shadow: 0 15px 35px rgba(59,130,246,0.6);
+    box-shadow: 0 0 35px rgba(34,211,238,0.7);
 }
 
 /* BLOQUEADAS */
@@ -159,13 +185,139 @@ body {
     padding: 40px 20px;
     color: #64748b;
 }
+
+/* ===============================
+   TARJETA DE PROMOCIÓN / AVANCE
+   =============================== */
+
+.upgrade-card {
+
+    max-width: 800px; 
+    /* Ancho máximo de la tarjeta.
+       Evita que se vea demasiado grande en pantallas amplias */
+
+    margin: 80px auto; 
+    /* 80px arriba y abajo.
+       "auto" centra horizontalmente */
+
+    padding: 40px; 
+    /* Espacio interno entre el contenido y los bordes */
+
+    border-radius: 25px; 
+    /* Bordes redondeados (más elegante y moderno) */
+
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    /* Fondo degradado oscuro estilo academia premium */
+
+    border: 1px solid rgba(255,255,255,0.08);
+    /* Borde sutil para efecto sofisticado */
+
+    text-align: center; 
+    /* Centra el texto dentro de la tarjeta */
+
+    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+    /* Sombra profunda para efecto flotante */
+}
+
+
+/* ===============================
+   TÍTULO DE LA TARJETA
+   =============================== */
+
+.upgrade-card h3 {
+
+    font-size: 26px; 
+    /* Tamaño del título */
+
+    margin-bottom: 20px; 
+    /* Espacio debajo del título */
+
+    color: #ffffff; 
+    /* Color blanco */
+
+    letter-spacing: 1px; 
+    /* Espaciado entre letras (más elegante) */
+}
+
+
+/* ===============================
+   TEXTO DESCRIPTIVO
+   =============================== */
+
+.upgrade-card p {
+
+    font-size: 16px; 
+    /* Tamaño del texto descriptivo */
+
+    color: #cbd5e1; 
+    /* Color gris claro profesional */
+
+    margin-bottom: 30px; 
+    /* Espacio antes del botón */
+}
+
+/* ===============================
+   AJUSTES RESPONSIVOS
+   =============================== */
+
+@media (max-width: 768px) {
+
+    .header {
+        padding: 20px;
+    }
+
+    .header h1 {
+        font-size: 28px;
+        letter-spacing: 2px;
+    }
+
+    .subtitle {
+        font-size: 12px;
+    }
+
+    .main-grid {
+        margin: 130px 15px 40px 15px;
+        gap: 30px;
+    }
+
+    .class-content {
+        padding: 25px;
+    }
+
+    .premium-button {
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+
+    .upgrade-card {
+        margin: 50px 15px;
+        padding: 25px;
+    }
+
+    .upgrade-card h3 {
+        font-size: 20px;
+    }
+
+    .upgrade-card p {
+        font-size: 14px;
+    }
+
+    .banner-alert {
+        margin: 40px 15px;
+        font-size: 14px;
+    }
+
+}
 </style>
 </head>
 
 <body>
 
 <header class="header">
-    <h1>Sistema Premium+</h1>
+    <div class="header-content">
+        <h1>Club Premium+</h1>
+        <p class="subtitle">Acceso exclusivo a clases avanzadas</p>
+    </div>
 </header>
 
 <div class="main-grid">
@@ -232,8 +384,20 @@ data-link="https://revistacps.github.io/Lilo1/">
 </div>
 </div>
 
+<div class="upgrade-card">
+    <h3>Módulo 2 Disponible</h3>
+    <p>
+        Nuevos contenidos te esperan junto con la 
+        <strong>Tarjeta Caballero Libra – Liga Bronce</strong>.
+        Continúa tu progreso y accede al siguiente nivel.
+    </p>
+    <a href="LINK_DEL_MODULO_2" class="premium-button">
+        Acceder al Módulo 2
+    </a>
+</div>
+
 <div class="banner-alert">
-🚀 Nuevas clases premium cada semana. Mantente atento 🔥
+🚀 En caso de que se solicite nuevamente la clave de acceso, simplemente introdúcela para mantener tu acceso al Club Premium+. 🚀
 </div>
 
 <footer class="footer">
@@ -242,17 +406,51 @@ data-link="https://revistacps.github.io/Lilo1/">
 
 <script>
 const premiumPassword = "552455";
+const unlockedKey = "premiumUnlocked";
 
-document.querySelectorAll(".locked-button").forEach(button => {
-button.addEventListener("click", function(e) {
-e.preventDefault();
-const userPass = prompt("🔐 Esta es una clase Premium.\nIntroduce la clave:");
-if(userPass === premiumPassword) {
-window.location.href = this.dataset.link;
-} else if(userPass !== null) {
-alert("❌ Clave incorrecta.");
+// Función para desbloquear todos los botones premium
+function unlockAllPremium() {
+    document.querySelectorAll(".locked-button").forEach(button => {
+        button.classList.remove("locked-button");
+        button.textContent = "Ver clase completa";
+        button.href = button.dataset.link;
+    });
 }
-});
+
+// Si ya estaba desbloqueado antes, liberar automáticamente
+if (localStorage.getItem(unlockedKey) === "true") {
+    unlockAllPremium();
+}
+
+// Escuchar clicks en botones bloqueados
+document.querySelectorAll(".locked-button").forEach(button => {
+    button.addEventListener("click", function(e) {
+        e.preventDefault();
+
+        // Si ya está desbloqueado, permitir acceso directo
+        if (localStorage.getItem(unlockedKey) === "true") {
+            window.location.href = this.dataset.link;
+            return;
+        }
+
+        const userPass = prompt("🔐 Esta es una clase Premium.\nIntroduce la clave:");
+
+        if (userPass === premiumPassword) {
+
+            // Guardar estado desbloqueado
+            localStorage.setItem(unlockedKey, "true");
+
+            // Desbloquear todos
+            unlockAllPremium();
+
+            alert("✅ Acceso Premium Activado");
+
+            window.location.href = this.dataset.link;
+
+        } else if (userPass !== null) {
+            alert("❌ Clave incorrecta.");
+        }
+    });
 });
 </script>
 
