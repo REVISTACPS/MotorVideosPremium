@@ -71,6 +71,58 @@ body {
     position: relative;
 }
 
+/* ===============================
+   CLASE DESTACADA (Clase 1)
+   =============================== */
+
+.featured-class {
+    position: relative;
+    border: 2px solid rgba(124, 58, 237, 0.6);
+    box-shadow: 
+        0 0 30px rgba(124, 58, 237, 0.6),
+        0 0 60px rgba(34, 211, 238, 0.3),
+        0 25px 60px rgba(0,0,0,0.7);
+    transform: scale(1.03);
+    overflow: hidden;
+}
+
+/* Destello animado */
+.featured-class::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -75%;
+    width: 50%;
+    height: 200%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.4),
+        transparent
+    );
+    transform: rotate(25deg);
+    animation: shine 3s infinite;
+}
+
+/* Animación del brillo */
+@keyframes shine {
+    0% {
+        left: -75%;
+    }
+    100% {
+        left: 130%;
+    }
+}
+
+/* Título más potente */
+.featured-class h3 {
+    font-size: 26px;
+    font-weight: 800;
+    background: linear-gradient(90deg, #22d3ee, #7c3aed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .premium-class:hover {
     transform: translateY(-10px);
     box-shadow: 0 0 40px rgba(124, 58, 237, 0.4);
@@ -186,75 +238,6 @@ body {
     color: #64748b;
 }
 
-/* ===============================
-   TARJETA DE PROMOCIÓN / AVANCE
-   =============================== */
-
-.upgrade-card {
-
-    max-width: 800px; 
-    /* Ancho máximo de la tarjeta.
-       Evita que se vea demasiado grande en pantallas amplias */
-
-    margin: 80px auto; 
-    /* 80px arriba y abajo.
-       "auto" centra horizontalmente */
-
-    padding: 40px; 
-    /* Espacio interno entre el contenido y los bordes */
-
-    border-radius: 25px; 
-    /* Bordes redondeados (más elegante y moderno) */
-
-    background: linear-gradient(135deg, #1e293b, #0f172a);
-    /* Fondo degradado oscuro estilo academia premium */
-
-    border: 1px solid rgba(255,255,255,0.08);
-    /* Borde sutil para efecto sofisticado */
-
-    text-align: center; 
-    /* Centra el texto dentro de la tarjeta */
-
-    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
-    /* Sombra profunda para efecto flotante */
-}
-
-
-/* ===============================
-   TÍTULO DE LA TARJETA
-   =============================== */
-
-.upgrade-card h3 {
-
-    font-size: 26px; 
-    /* Tamaño del título */
-
-    margin-bottom: 20px; 
-    /* Espacio debajo del título */
-
-    color: #ffffff; 
-    /* Color blanco */
-
-    letter-spacing: 1px; 
-    /* Espaciado entre letras (más elegante) */
-}
-
-
-/* ===============================
-   TEXTO DESCRIPTIVO
-   =============================== */
-
-.upgrade-card p {
-
-    font-size: 16px; 
-    /* Tamaño del texto descriptivo */
-
-    color: #cbd5e1; 
-    /* Color gris claro profesional */
-
-    margin-bottom: 30px; 
-    /* Espacio antes del botón */
-}
 
 /* ===============================
    AJUSTES RESPONSIVOS
@@ -289,19 +272,6 @@ body {
         font-size: 14px;
     }
 
-    .upgrade-card {
-        margin: 50px 15px;
-        padding: 25px;
-    }
-
-    .upgrade-card h3 {
-        font-size: 20px;
-    }
-
-    .upgrade-card p {
-        font-size: 14px;
-    }
-
     .banner-alert {
         margin: 40px 15px;
         font-size: 14px;
@@ -323,7 +293,7 @@ body {
 <div class="main-grid">
 
 <!-- CLASE 1 (VISIBLE) -->
-<section class="premium-class">
+<section class="premium-class featured-class">
 <div class="video-container">
 <iframe src="https://www.youtube.com/embed/qF_KQliAjx0" allowfullscreen></iframe>
 </div>
@@ -382,18 +352,6 @@ data-link="https://revistacps.github.io/Lilo1/">
 </section>
 
 </div>
-</div>
-
-<div class="upgrade-card">
-    <h3>Módulo 2 Disponible</h3>
-    <p>
-        Nuevos contenidos te esperan junto con la 
-        <strong>Tarjeta Caballero Libra – Liga Bronce</strong>.
-        Continúa tu progreso y accede al siguiente nivel.
-    </p>
-    <a href="LINK_DEL_MODULO_2" class="premium-button">
-        Acceder al Módulo 2
-    </a>
 </div>
 
 <div class="banner-alert">
