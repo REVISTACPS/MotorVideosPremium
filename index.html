@@ -1,369 +1,373 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sistema Premium+</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Premium+</title>
 
-<style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: "Segoe UI", sans-serif;
-    background: radial-gradient(circle at 20% 30%, #7c3aed33, transparent 40%),
+        body {
+            font-family: "Segoe UI", sans-serif;
+            background: radial-gradient(circle at 20% 30%, #7c3aed33, transparent 40%),
                 radial-gradient(circle at 80% 70%, #22d3ee22, transparent 40%),
                 linear-gradient(180deg, #0f172a, #0b1120);
-    color: #e2e8f0;
-    line-height: 1.6;
-}
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
 
-/* HEADER */
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: linear-gradient(90deg, #b45309, #ea580c);
-    padding: 28px 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    box-shadow: 0 6px 25px rgba(0,0,0,0.4);
-}
+        /* HEADER */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(90deg, #b45309, #ea580c);
+            padding: 28px 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+        }
 
-.header-content {
-    text-align: center;
-}
+        .header-content {
+            text-align: center;
+        }
 
-.header h1 {
-    font-size: 40px;
-    font-weight: 800;
-    letter-spacing: 3px;
-    color: #ffffff;
-    text-transform: uppercase;
-}
+        .header h1 {
+            font-size: 40px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
 
-.subtitle {
-    font-size: 14px;
-    color: rgba(255,255,255,0.9);
-    margin-top: 6px;
-    letter-spacing: 1px;
-}
+        .subtitle {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 6px;
+            letter-spacing: 1px;
+        }
 
-/* GRID */
-.main-grid {
-    max-width: 1100px;
-    margin: 150px auto 60px auto;
-    padding: 20px;
-    display: grid;
-    gap: 50px;
-}
+        /* GRID */
+        .main-grid {
+            max-width: 1100px;
+            margin: 150px auto 60px auto;
+            padding: 20px;
+            display: grid;
+            gap: 50px;
+        }
 
-/* TARJETAS */
-.premium-class {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(20px);
-    border-radius: 25px;
-    overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.1);
-    transition: 0.4s ease;
-    position: relative;
-}
+        /* TARJETAS */
+        .premium-class {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: 0.4s ease;
+            position: relative;
+        }
 
-/* ===============================
+        /* ===============================
    CLASE DESTACADA (Clase 1)
    =============================== */
 
-.featured-class {
-    position: relative;
-    border: 2px solid rgba(124, 58, 237, 0.6);
-    box-shadow: 
-        0 0 30px rgba(124, 58, 237, 0.6),
-        0 0 60px rgba(34, 211, 238, 0.3),
-        0 25px 60px rgba(0,0,0,0.7);
-    transform: scale(1.03);
-    overflow: hidden;
-}
+        .featured-class {
+            position: relative;
+            border: 2px solid rgba(124, 58, 237, 0.6);
+            box-shadow:
+                0 0 30px rgba(124, 58, 237, 0.6),
+                0 0 60px rgba(34, 211, 238, 0.3),
+                0 25px 60px rgba(0, 0, 0, 0.7);
+            transform: scale(1.03);
+            overflow: hidden;
+        }
 
-/* Destello animado */
-.featured-class::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -75%;
-    width: 50%;
-    height: 200%;
-    background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(255,255,255,0.4),
-        transparent
-    );
-    transform: rotate(25deg);
-    animation: shine 3s infinite;
-}
+        /* Destello animado */
+        .featured-class::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -75%;
+            width: 50%;
+            height: 200%;
+            background: linear-gradient(120deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.4),
+                    transparent);
+            transform: rotate(25deg);
+            animation: shine 3s infinite;
+        }
 
-/* Animación del brillo */
-@keyframes shine {
-    0% {
-        left: -75%;
-    }
-    100% {
-        left: 130%;
-    }
-}
+        /* Animación del brillo */
+        @keyframes shine {
+            0% {
+                left: -75%;
+            }
 
-/* Título más potente */
-.featured-class h3 {
-    font-size: 26px;
-    font-weight: 800;
-    background: linear-gradient(90deg, #22d3ee, #7c3aed);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+            100% {
+                left: 130%;
+            }
+        }
 
-.premium-class:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 40px rgba(124, 58, 237, 0.4);
-}
+        /* Título más potente */
+        .featured-class h3 {
+            font-size: 26px;
+            font-weight: 800;
+            background: linear-gradient(90deg, #22d3ee, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-.premium-class:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 35px 70px rgba(0,0,0,0.7);
-}
+        .premium-class:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 40px rgba(124, 58, 237, 0.4);
+        }
 
-/* VIDEO */
-.video-container {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%;
-    background: #000;
-}
+        .premium-class:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 35px 70px rgba(0, 0, 0, 0.7);
+        }
 
-.video-container iframe {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: 0;
-}
+        /* VIDEO */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            background: #000;
+        }
 
-/* CONTENIDO */
-.class-content {
-    padding: 35px;
-    text-align: center;
-}
+        .video-container iframe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
 
-.class-content h3 {
-    font-size: 22px;
-    margin-bottom: 12px;
-    font-weight: 600;
-    color: #f1f5f9;
-}
+        /* CONTENIDO */
+        .class-content {
+            padding: 35px;
+            text-align: center;
+        }
 
-.class-subtitle {
-    font-size: 14px;
-    color: #94a3b8;
-    margin-bottom: 25px;
-}
+        .class-content h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+            font-weight: 600;
+            color: #f1f5f9;
+        }
 
-/* BOTÓN */
-.premium-button {
-    display: inline-block;
-    padding: 14px 40px;
-    border-radius: 50px;
-    background: linear-gradient(90deg, #22d3ee, #7c3aed);
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    transition: 0.3s ease;
-    box-shadow: 0 0 20px rgba(124,58,237,0.5);
-}
+        .class-subtitle {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-bottom: 25px;
+        }
 
-.premium-button:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 0 35px rgba(34,211,238,0.7);
-}
+        /* BOTÓN */
+        .premium-button {
+            display: inline-block;
+            padding: 14px 40px;
+            border-radius: 50px;
+            background: linear-gradient(90deg, #22d3ee, #7c3aed);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: 0.3s ease;
+            box-shadow: 0 0 20px rgba(124, 58, 237, 0.5);
+        }
 
-/* BLOQUEADAS */
-.locked-button {
-    background: linear-gradient(135deg, #9333ea, #7e22ce);
-    box-shadow: 0 10px 25px rgba(147,51,234,0.4);
-}
+        .premium-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 35px rgba(34, 211, 238, 0.7);
+        }
 
-/* CONTENEDOR PREMIUM BLOQUEADO */
-.premium-locked-container {
-    background: linear-gradient(135deg, #3b82f6, #7c3aed);
-    padding: 50px 30px;
-    border-radius: 25px;
-    box-shadow: 0 25px 60px rgba(0,0,0,0.6);
-}
+        /* BLOQUEADAS */
+        .locked-button {
+            background: linear-gradient(135deg, #9333ea, #7e22ce);
+            box-shadow: 0 10px 25px rgba(147, 51, 234, 0.4);
+        }
 
-
-.premium-locked-container h2 {
-    text-align: center;
-    color: #111;
-    margin-bottom: 40px;
-    font-size: 24px;
-}
-
-.premium-locked-container .premium-class {
-    background: rgba(0,0,0,0.25);
-    border: 1px solid rgba(0,0,0,0.2);
-}
-
-.premium-locked-container .class-content h3 {
-    color: #111;
-}
-
-/* BANNER */
-.banner-alert {
-    background: linear-gradient(135deg, #f59e0b, #f97316);
-    color: #111;
-    font-weight: bold;
-    text-align: center;
-    padding: 22px;
-    border-radius: 15px;
-    margin: 60px auto;
-    max-width: 1000px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-}
-
-/* FOOTER */
-.footer {
-    text-align: center;
-    font-size: 13px;
-    padding: 40px 20px;
-    color: #64748b;
-}
+        /* CONTENEDOR PREMIUM BLOQUEADO */
+        .premium-locked-container {
+            background: linear-gradient(135deg, #3b82f6, #7c3aed);
+            padding: 50px 30px;
+            border-radius: 25px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+        }
 
 
-/* ===============================
+        .premium-locked-container h2 {
+            text-align: center;
+            color: #111;
+            margin-bottom: 40px;
+            font-size: 24px;
+        }
+
+        .premium-locked-container .premium-class {
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(0, 0, 0, 0.2);
+        }
+
+        .premium-locked-container .class-content h3 {
+            color: #111;
+        }
+
+        /* BANNER */
+        .banner-alert {
+            background: linear-gradient(135deg, #f59e0b, #f97316);
+            color: #111;
+            font-weight: bold;
+            text-align: center;
+            padding: 22px;
+            border-radius: 15px;
+            margin: 60px auto;
+            max-width: 1000px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        /* FOOTER */
+        .footer {
+            text-align: center;
+            font-size: 13px;
+            padding: 40px 20px;
+            color: #64748b;
+        }
+
+
+        /* ===============================
    AJUSTES RESPONSIVOS
    =============================== */
 
-@media (max-width: 768px) {
+        @media (max-width: 768px) {
 
-    .header {
-        padding: 20px;
-    }
+            .header {
+                padding: 20px;
+            }
 
-    .header h1 {
-        font-size: 28px;
-        letter-spacing: 2px;
-    }
+            .header h1 {
+                font-size: 28px;
+                letter-spacing: 2px;
+            }
 
-    .subtitle {
-        font-size: 12px;
-    }
+            .subtitle {
+                font-size: 12px;
+            }
 
-    .main-grid {
-        margin: 130px 15px 40px 15px;
-        gap: 30px;
-    }
+            .main-grid {
+                margin: 130px 15px 40px 15px;
+                gap: 30px;
+            }
 
-    .class-content {
-        padding: 25px;
-    }
+            .class-content {
+                padding: 25px;
+            }
 
-    .premium-button {
-        padding: 12px 25px;
-        font-size: 14px;
-    }
+            .premium-button {
+                padding: 12px 25px;
+                font-size: 14px;
+            }
 
-    .banner-alert {
-        margin: 40px 15px;
-        font-size: 14px;
-    }
+            .banner-alert {
+                margin: 40px 15px;
+                font-size: 14px;
+            }
 
-}
-</style>
+        }
+    </style>
 </head>
 
 <body>
 
-<header class="header">
-    <div class="header-content">
-        <h1>Club Premium+</h1>
-        <p class="subtitle">Acceso exclusivo a clases avanzadas</p>
+    <header class="header">
+        <div class="header-content">
+            <h1>Club Premium+</h1>
+            <p class="subtitle">Acceso exclusivo a clases avanzadas</p>
+        </div>
+    </header>
+
+    <div class="main-grid">
+
+        <!-- CLASE 1 (VISIBLE) -->
+        <section class="premium-class featured-class">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/qF_KQliAjx0" allowfullscreen></iframe>
+            </div>
+            <div class="class-content">
+                <h3>Kung Fu Panda</h3>
+                <p class="class-subtitle">Entrenamiento diario de expresión natural</p>
+                <a href="https://revistacps.github.io/KungFuPanda-2/" class="premium-button">
+                    Ver clase completa
+                </a>
+            </div>
+        </section>
+
+        <!-- CONTENEDOR CLASES PREMIUM -->
+        <div class="premium-locked-container">
+
+            <h2>🔒 Clases Premium</h2>
+
+            <section class="premium-class">
+                <div class="class-content">
+                    <h3>Sr. Pibody1</h3>
+                    <a href="#" class="premium-button locked-button"
+                        data-link="https://revistacps.github.io/Sr.Pibody1">
+                        🔒 Ver clase completa
+                    </a>
+                </div>
+            </section>
+
+            <section class="premium-class">
+                <div class="class-content">
+                    <h3>Ana coronación</h3>
+                    <a href="#" class="premium-button locked-button"
+                        data-link="https://revistacps.github.io/Anacoronacion1/">
+                        🔒 Ver clase completa
+                    </a>
+                </div>
+            </section>
+
+            <section class="premium-class">
+                <div class="class-content">
+                    <h3>Friends</h3>
+                    <a href="#" class="premium-button locked-button"
+                        data-link="https://revistacps.github.io/Friend1/">
+                        🔒 Ver clase completa
+                    </a>
+                </div>
+            </section>
+
+            <section class="premium-class">
+                <div class="class-content">
+                    <h3>Lilo</h3>
+                    <a href="#" class="premium-button locked-button" data-link="https://revistacps.github.io/Lilo1/">
+                        🔒 Ver clase completa
+                    </a>
+                </div>
+            </section>
+
+        </div>
     </div>
-</header>
 
-<div class="main-grid">
+    <div class="banner-alert">
+        🚀 En caso de que se solicite nuevamente la clave de acceso, simplemente introdúcela para mantener tu acceso al
+        Club Premium+. 🚀
+    </div>
 
-<!-- CLASE 1 (VISIBLE) -->
-<section class="premium-class featured-class">
-<div class="video-container">
-<iframe src="https://www.youtube.com/embed/qF_KQliAjx0" allowfullscreen></iframe>
-</div>
-<div class="class-content">
-<h3>Clase 1 - KungFuPanda-2</h3>
-<p class="class-subtitle">Entrenamiento diario de expresión natural</p>
-<a href="https://revistacps.github.io/KungFuPanda-2/" class="premium-button">
-Ver clase completa
-</a>
-</div>
-</section>
+    <footer class="footer">
+        © 2026 Neurolerning School
+    </footer>
 
-<!-- CONTENEDOR CLASES PREMIUM -->
-<div class="premium-locked-container">
-
-<h2>🔒 Clases Premium</h2>
-
-<section class="premium-class">
-<div class="class-content">
-<h3>Clase 2 - Sr.Pibody1</h3>
-<a href="#" class="premium-button locked-button"
-data-link="https://revistacps.github.io/Sr.Pibody1">
-🔒 Ver clase completa
-</a>
-</div>
-</section>
-
-<section class="premium-class">
-<div class="class-content">
-<h3>Clase 3 - Anacoronacion1</h3>
-<a href="#" class="premium-button locked-button"
-data-link="https://revistacps.github.io/KungFuPanda-2/">
-🔒 Ver clase completa
-</a>
-</div>
-</section>
-
-<section class="premium-class">
-<div class="class-content">
-<h3>Clase 4 - Friends1</h3>
-<a href="#" class="premium-button locked-button"
-data-link="https://revistacps.github.io/KungFuPanda-2/">
-🔒 Ver clase completa
-</a>
-</div>
-</section>
-
-<section class="premium-class">
-<div class="class-content">
-<h3>Clase 5 - Lilo1</h3>
-<a href="#" class="premium-button locked-button"
-data-link="https://revistacps.github.io/Lilo1/">
-🔒 Ver clase completa
-</a>
-</div>
-</section>
-
-</div>
-</div>
-
-<div class="banner-alert">
-🚀 En caso de que se solicite nuevamente la clave de acceso, simplemente introdúcela para mantener tu acceso al Club Premium+. 🚀
-</div>
-
-<footer class="footer">
-© 2026 Neurolerning School
-</footer>
-
-<script>
-const premiumPassword = "552455";
+    <script>
+        const premiumPassword = "552455";
 const unlockedKey = "premiumUnlocked";
 
 // Función para desbloquear todos los botones premium
@@ -410,7 +414,8 @@ document.querySelectorAll(".locked-button").forEach(button => {
         }
     });
 });
-</script>
+    </script>
 
 </body>
+
 </html>
